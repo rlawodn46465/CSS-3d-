@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        li {
+            list-style-type: none;
+        }
+
+        @keyframes bingle {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .stage {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            background-color: powderblue;
+            perspective: 600px;
+        }
+
+        .carousel {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            transform-style: preserve-3d;
+            animation: bingle 15s infinite linear;
+        }
+
+        .panel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 230px;
+            height: 336px;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .panel:nth-child(1) {
+            transform: rotateZ(0deg) translateY(-300px)
+        }
+
+        .panel:nth-child(2) {
+            transform: rotateZ(60deg) translateY(-300px)
+        }
+
+        .panel:nth-child(3) {
+            transform: rotateZ(120deg) translateY(-300px)
+        }
+
+        .panel:nth-child(4) {
+            transform: rotateZ(180deg) translateY(-300px)
+        }
+
+        .panel:nth-child(5) {
+            transform: rotateZ(240deg) translateY(-300px)
+        }
+
+        .panel:nth-child(6) {
+            transform: rotateZ(300deg) translateY(-300px)
+        }
+    </style>
+</head>
+
+<body>
+    <div class="stage">
+        <ul class="carousel">
+            <li class="panel">1</li>
+            <li class="panel">2</li>
+            <li class="panel">3</li>
+            <li class="panel">4</li>
+            <li class="panel">5</li>
+            <li class="panel">6</li>
+        </ul>
+    </div>
+</body>
+
+</html>
