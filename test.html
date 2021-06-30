@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,li{
+            list-style-type: none;
+        }
+
+        @keyframes bingle{
+            to{
+                transform: rotateY(-360deg);
+            }
+        }
+
+        .stage{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            background-color: powderblue;
+            perspective: 600px;
+        }
+
+        .carousel{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            transform-style: preserve-3d;
+            animation: bingle 5s infinite linear;
+        }
+
+        .panel{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 200px;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .panel:nth-child(1){transform: rotateY(0deg) translateZ(173px);}
+        .panel:nth-child(2){transform: rotateY(60deg) translateZ(173px);}
+        .panel:nth-child(3){transform: rotateY(120deg) translateZ(173px);}
+        .panel:nth-child(4){transform: rotateY(180deg) translateZ(173px);}
+        .panel:nth-child(5){transform: rotateY(240deg) translateZ(173px);}
+        .panel:nth-child(6){transform: rotateY(300deg) translateZ(173px);}
+    </style>
+</head>
+<body>
+    <div class="stage">
+        <ul class="carousel">
+            <li class="panel">1</li>
+            <li class="panel">2</li>
+            <li class="panel">3</li>
+            <li class="panel">4</li>
+            <li class="panel">5</li>
+            <li class="panel">6</li>
+        </ul>
+    </div>
+</body>
+</html>
